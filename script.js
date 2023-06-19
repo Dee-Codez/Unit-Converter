@@ -6,6 +6,11 @@ let yard = document.getElementById("yards");
 let km = document.getElementById("km");
 let mile = document.getElementById("miles");
 
+let celsius = document.getElementById("celsius");
+let kelvin = document.getElementById("kelvin");
+let fahrenheit = document.getElementById("fahrenheit");
+
+
 function feetToOther(val){
     meter.value =  val/3.2808; 
     inch.value =  val*12;   
@@ -65,6 +70,21 @@ function milesToOther(val){
 }
 // *********************//
 
+function celsiusToOther(val){
+    kelvin.value =  val+273.15; 
+    fahrenheit.value =  (val*1.8)+32;   
+}
+
+function kelvinToOther(val){
+    celsius.value =  val-273.15; 
+    fahrenheit.value =  ((val-273.15)*1.8)+32;   
+}
+
+function fahrenheitToOther(val){
+    celsius.value =  (val-32)/1.8;
+    kelvin.value =  ((val-32)/1.8)+273.15;   
+}
+
 
 
 function convertToOthers(convertFrom,value){    
@@ -76,5 +96,13 @@ function convertToOthers(convertFrom,value){
         case "yard" : yardsToOther (parseFloat(value)); break;
         case "km"   : kmToOther (parseFloat(value)); break;
         case "mile" : milesToOther(parseFloat(value)); break;
+        case "celsius" : celsiusToOther(parseFloat(value)); break;
+        case "kelvin" : kelvinToOther(parseFloat(value)); break;
+        case "fahrenheit" : fahrenheitToOther(parseFloat(value)); break;
     }
 }
+
+
+
+
+
