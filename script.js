@@ -10,6 +10,20 @@ let celsius = document.getElementById("celsius");
 let kelvin = document.getElementById("kelvin");
 let fahrenheit = document.getElementById("fahrenheit");
 
+let kg = document.getElementById("kg");
+let gm = document.getElementById("gm");
+let mt = document.getElementById("mt");
+let lb = document.getElementById("lb");
+let oz = document.getElementById("oz");
+
+let s = document.getElementById("s");
+let ms = document.getElementById("ms");
+let min = document.getElementById("min");
+let hr = document.getElementById("hr");
+let d = document.getElementById("d");
+let w = document.getElementById("w");
+
+var daysInCurrentMonth=new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate()
 
 function feetToOther(val){
     meter.value =  val/3.2808; 
@@ -122,6 +136,49 @@ function ozToOther(val){
     lb.value = val/16; 
 }
 
+// *********************//
+
+function sToOther(val){
+    ms.value = val*1000;
+    min.value = val/60;
+    hr.value = val/3600;  
+    d.value = val/86400;
+    w.value = val/604800; 
+}
+
+function msToOther(val){
+    s.value = val/1000;
+    min.value = val/60000;
+    hr.value = val/3600000;  
+    d.value = val/86400000;
+    w.value = val/604800000; 
+}
+
+function hrToOther(val){
+    s.value = val*3600;
+    ms.value = val*3600000;
+    min.value = val*60;  
+    d.value = val/24;
+    w.value = val/168; 
+}
+
+function dToOther(val){
+    s.value = val*86400;
+    ms.value = val*86400000;
+    min.value = val*1440;  
+    hr.value = val*24;
+    w.value = val/7;
+}
+
+function wToOther(val){
+    s.value = val*604800;
+    ms.value = val*604800000;
+    min.value = val*10080;  
+    hr.value = val*168;
+    d.value = val*7;
+}
+
+
 function convertToOthers(convertFrom,value){    
     switch(convertFrom){
         case "feet" : feetToOther (parseFloat(value)); break;
@@ -139,6 +196,12 @@ function convertToOthers(convertFrom,value){
         case "mt" : mtToOther(parseFloat(value)); break;
         case "lb" : lbToOther(parseFloat(value)); break;
         case "oz" : ozToOther(parseFloat(value)); break;
+        case "s" : sToOther(parseFloat(value)); break;
+        case "ms" : msToOther(parseFloat(value)); break;
+        case "min" : minToOther(parseFloat(value)); break;
+        case "hr" : hrToOther(parseFloat(value)); break;
+        case "d" : dToOther(parseFloat(value)); break;
+        case "w" : wToOther(parseFloat(value)); break;
     }
 }
 
