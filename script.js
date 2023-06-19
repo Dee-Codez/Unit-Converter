@@ -66,8 +66,8 @@ function milesToOther(val){
     yard.value = val*1760; 
     km.value = val/0.62137;
     meter.value = val/0.00062137;
-
 }
+
 // *********************//
 
 function celsiusToOther(val){
@@ -85,7 +85,42 @@ function fahrenheitToOther(val){
     kelvin.value =  ((val-32)/1.8)+273.15;   
 }
 
+// *********************//
 
+function kgToOther(val){
+    gm.value = val*1000;
+    mt.value = val/1000;  
+    lb.value = val*2.205;
+    oz.value = val*35.274; 
+}
+
+function gmToOther(val){
+    kg.value = val/1000;
+    mt.value = val/(1e+6);  
+    lb.value = val/453.59;
+    oz.value = val/28.35; 
+}
+
+function mtToOther(val){
+    kg.value = val*1000;
+    gm.value = val/(1e+6);  
+    lb.value = val*2205;
+    oz.value = val*35274; 
+}
+
+function lbToOther(val){
+    kg.value = val/2.205;
+    gm.value = val/0.002205;  
+    mt.value = val/2205;
+    oz.value = val*16; 
+}
+
+function ozToOther(val){
+    kg.value = val/35.274;
+    gm.value = val/0.035274;  
+    mt.value = val/35274;
+    lb.value = val/16; 
+}
 
 function convertToOthers(convertFrom,value){    
     switch(convertFrom){
@@ -99,6 +134,11 @@ function convertToOthers(convertFrom,value){
         case "celsius" : celsiusToOther(parseFloat(value)); break;
         case "kelvin" : kelvinToOther(parseFloat(value)); break;
         case "fahrenheit" : fahrenheitToOther(parseFloat(value)); break;
+        case "kg" : kgToOther(parseFloat(value)); break;
+        case "gm" : gmToOther(parseFloat(value)); break;
+        case "mt" : mtToOther(parseFloat(value)); break;
+        case "lb" : lbToOther(parseFloat(value)); break;
+        case "oz" : ozToOther(parseFloat(value)); break;
     }
 }
 

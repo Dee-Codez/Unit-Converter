@@ -102,19 +102,18 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    gap: 25px;
+
     width: 51%;
     margin-left: 24%;
     border-radius: 30px;
     box-shadow: 0.1px 1px 2px 1px rgb(0, 0, 0,0.1);
-    backdrop-filter: blur(40px);
+    background-color: rgb(255, 255, 255,0.05);
 }
 
 .input{
     display: flex;
     align-items: center;
+    padding: 1.5rem;
 }
 
 .input label{
@@ -131,7 +130,9 @@ body{
 }
 
 .input input{
-    width: 50%;
+    min-width: 50px;
+    width: 40%;
+    max-width: none;
     border:none;
     margin-left: 5%;
     background-color: rgb(255, 255, 255,0.5);
