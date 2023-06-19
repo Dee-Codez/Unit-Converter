@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
 body{
     width: 100%;
     height: 100vh;
@@ -23,8 +31,16 @@ body{
     }
 }
 
-.header h1{ 
-    margin-top: 2%;
+.parent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-self: center
+}
+
+.header h1,h2{ 
+    padding-top: 2.5rem;
     text-align: center;
     color: rgb(255, 255, 255);
 }
@@ -63,4 +79,62 @@ body{
 .btn:hover{
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
     transform: scale(1.05);
+}
+
+.caption{
+    color: white;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+    gap: 25px;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.input label{
+    color: white;
+    font-size: larger;
+}
+.input input{
+    border:none;
+    margin-left: 5%;
+    background-color: rgb(255, 255, 255,0.5);
+    outline: none;
+    box-shadow: 0.1px 1px 2px 1px rgb(145, 140, 140);
+    padding:4px;
+    font-size: large;
+    border-radius: 3px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.homebtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.homebtn .btn{
+    font-size: 15px;
+    font-weight: bold;
+    background: rgb(255, 255, 255,0.2);
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
