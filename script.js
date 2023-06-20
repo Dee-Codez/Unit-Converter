@@ -154,6 +154,14 @@ function msToOther(val){
     w.value = val/604800000; 
 }
 
+function minToOther(val){
+    s.value = val*60;
+    ms.value = val*60000;
+    hr.value = val/60;  
+    d.value = val/1440;
+    w.value = val/10080; 
+}
+
 function hrToOther(val){
     s.value = val*3600;
     ms.value = val*3600000;
